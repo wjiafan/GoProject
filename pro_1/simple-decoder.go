@@ -29,7 +29,7 @@ func SimpleDecoder(){
 	}
 
 	ok,err := enc.Verify(shards)
-	if ok{
+	if ok {
 		fmt.Println("No reconstruction needed")
 	}else{
 		fmt.Println("Verification failed.Reconstruction data")

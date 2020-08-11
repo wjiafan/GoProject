@@ -1,7 +1,6 @@
 package main
 
 import (
-	"./pro_1"
 	"fmt"
 )
 
@@ -11,8 +10,13 @@ import (
 
 func main(){
 	fmt.Println("Hello,world!")
+
+	//import"./pro_1"
 	//编码
-	pro_1.SimpleEncoder()
+	//pro_1.SimpleEncoder()
 	//解码
 	//pro_1.SimpleDecoder()
+
+	//import"./pro_2"
+
 }
