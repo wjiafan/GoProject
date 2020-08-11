@@ -1,6 +1,7 @@
 package main
 
 import (
+	"./pro_3"
 	"fmt"
 )
 
@@ -18,5 +19,8 @@ func main(){
 	//pro_1.SimpleDecoder()
 
 	//import"./pro_2"
+
+	//import"./pro_3"
+	pro_3.HashInit()
 
 }

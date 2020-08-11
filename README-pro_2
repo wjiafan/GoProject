@@ -17,7 +17,10 @@ https://github.com/geektutu/7days-golang
 https://segmentfault.com/a/1190000021199728
 {1.8}Go Test 单元测试简明教程
 https://geektutu.com/post/quick-go-test.html
-
+{1.9}使用Go实现一致性哈希
+https://www.jianshu.com/p/b26555301f8e
+{1.20}hash.go-几种 hash 函数实现
+https://studygolang.com/articles/16058
 
 <2>执行结果
 
@@ -34,3 +37,4 @@ ok      _/F_/GoCode/pro_2       0.054s
       添加方式：UUID+'特殊字符'
       对象 -> 服务器
       对象 -> 硬盘
+{3.2}目前的一致性哈希算法没有对增加节点做处理。
