@@ -1,0 +1,40 @@
+【pro_2】基于go实现DHT
+<1>参考资料
+{1.1}基于Golang实现环形分布式哈希表
+https://haidong.dev/%E5%9F%BA%E4%BA%8E%20Golang%20%E5%AE%9E%E7%8E%B0%E7%8E%AF%E5%BD%A2%E5%88%86%E5%B8%83%E5%BC%8F%E5%93%88%E5%B8%8C%EF%BC%88Chord%20DHT)/
+{1.2}Chord：结构化 P2P 网络中的一个DHT算法
+https://www.infoq.cn/article/2014/12/Chord-p2p-network-dht
+{1.3}go中文文档-分布式系统
+https://www.bookstack.cn/read/topgoer/31f302a6b7feec5c.md
+{1.4}自己的p2p网络实现(一)
+https://www.dazhuanlan.com/2019/12/10/5dee88a2b380a/
+{1.5}一致性hash算法原理及golang实现
+https://segmentfault.com/a/1190000013533592
+{1.6}动手写分布式缓存 - GeeCache第四天 一致性哈希(hash)
+https://geektutu.com/post/geecache-day4.html
+https://github.com/geektutu/7days-golang
+{1.7}图解一致性哈希算法
+https://segmentfault.com/a/1190000021199728
+{1.8}Go Test 单元测试简明教程
+https://geektutu.com/post/quick-go-test.html
+{1.9}使用Go实现一致性哈希
+https://www.jianshu.com/p/b26555301f8e
+{1.20}hash.go-几种 hash 函数实现
+https://studygolang.com/articles/16058
+
+<2>执行结果
+
+进入到pro_2中，执行 go test :
+
+F:\GoCode\pro_2>go test
+PASS
+ok      _/F_/GoCode/pro_2       0.054s
+
+
+<3>未解决的问题
+{3.1}目前使用hash函数只是进行了类型转换，需要使用字符串hash;即将真实的挂载点路径当成hash值。
+      UUID -> 挂载点       ls -l /dev/disk/by-uuid
+      添加方式：UUID+'特殊字符'
+      对象 -> 服务器
+      对象 -> 硬盘
+{3.2}目前的一致性哈希算法没有对增加节点做处理。

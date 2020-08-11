@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./pro_3"
+	"./pro_4"
 	"fmt"
 )
 
@@ -12,15 +12,18 @@ import (
 func main(){
 	fmt.Println("Hello,world!")
 
-	//import"./pro_1"
+	//import "./pro_1"
 	//编码
 	//pro_1.SimpleEncoder()
 	//解码
 	//pro_1.SimpleDecoder()
 
-	//import"./pro_2"
+	//import "./pro_2"
 
-	//import"./pro_3"
-	pro_3.HashInit()
+	//import "./pro_3"
+	//pro_3.HashInit()
+
+	//import "./pro_4"
+	pro_4.LinkMysql()
 
 }
