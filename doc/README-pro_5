@@ -1,0 +1,75 @@
+【pro_5】实现对路径下所有文件/文件夹下所有文件进行遍历，获取文件名、文件大小和文件hash值，并存放到数据库中。
+
+<1>参考资料
+{1.1}golang学习笔记---获取目录下的文件及目录信息
+https://www.cnblogs.com/saryli/p/13410192.html
+{1.2}Golang获取目录下的文件及目录信息
+https://www.cnblogs.com/lgj8/p/12628286.html
+
+
+<2>执行结果
+
+{2.1}生成UUID
+[root@coldstorage ~]# cat /proc/sys/kernel/random/uuid
+243c9504-f77a-453a-a9ff-d48becfe3522
+[root@coldstorage ~]# uuidgen
+38e6adcc-c9c2-46e5-bb8d-f4e0aa1bc8dd
+
+
+{2.2}创建数据库
+数据库名：SimpleStorage
+数据库表：filelist
+数据库创建语句：
+create database SimpleStorage;
+CREATE TABLE IF NOT EXISTS `SimpleStorage`.`filelist` (
+`file_id` INT(12) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '文件编号',
+`file_name` VARCHAR(100) NOT NULL COMMENT '文件名',
+`file_path` VARCHAR(200) NOT NULL COMMENT '文件路径',
+PRIMARY KEY (`file_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci
+COMMENT = '文件名列表';
+
+
+{2.3}执行结果
+BEGIN!!!
+LastInsertId 13
+LastInsertId 14
+LastInsertId 15
+LastInsertId 16
+LastInsertId 17
+LastInsertId 18
+LastInsertId 19
+LastInsertId 20
+LastInsertId 21
+LastInsertId 22
+LastInsertId 23
+11
+END!!!
+
+mysql> select * from filelist;
++---------+------------------------------+-----------------------------------------------------+
+| file_id | file_name                    | file_path                                           |
++---------+------------------------------+-----------------------------------------------------+
+|      13 | Erlang-OTP.pdf               | F:\GoCode\testdata\PDF\Erlang-OTP.pdf               |
+|      14 | Pandas_Cheat_Sheet_zh_CN.pdf | F:\GoCode\testdata\PDF\Pandas_Cheat_Sheet_zh_CN.pdf |
+|      15 | 存储技术基础-浪潮.pptx       | F:\GoCode\testdata\PPT\存储技术基础-浪潮.pptx       |
+|      16 | RS.txt                       | F:\GoCode\testdata\RS.txt                           |
+|      17 | RS.txt.0                     | F:\GoCode\testdata\RS.txt.0                         |
+|      18 | RS.txt.1                     | F:\GoCode\testdata\RS.txt.1                         |
+|      19 | RS.txt.2                     | F:\GoCode\testdata\RS.txt.2                         |
+|      20 | RS.txt.3                     | F:\GoCode\testdata\RS.txt.3                         |
+|      21 | RS.txt.4                     | F:\GoCode\testdata\RS.txt.4                         |
+|      22 | RS.txt.5                     | F:\GoCode\testdata\RS.txt.5                         |
+|      23 | hash-test.txt                | F:\GoCode\testdata\hash-test.txt                    |
++---------+------------------------------+-----------------------------------------------------+
+11 rows in set (0.06 sec)
+
+
+<3>未解决的问题
+{3.1}目前未对文件进行hash
+{3.2}重新构建filelist,使其更加丰富
+
+

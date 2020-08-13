@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./pro_4"
+	"./pro_5"
 	"fmt"
 )
 
@@ -10,7 +10,8 @@ import (
  */
 
 func main(){
-	fmt.Println("Hello,world!")
+
+	fmt.Println("BEGIN!!!")
 
 	//import "./pro_1"
 	//编码
@@ -24,6 +25,12 @@ func main(){
 	//pro_3.HashInit()
 
 	//import "./pro_4"
-	pro_4.LinkMysql()
+	//pro_4.LinkMysqlSimpleStorage()
+
+	//import "./pro_5"
+	var pwd="F:\\GoCode\\testdata"
+	pro_5.Filelist(pwd)
+
+	fmt.Println("END!!!")
 
 }

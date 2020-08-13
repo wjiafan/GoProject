@@ -14,6 +14,13 @@ const(
 	DBTableName = "user"
 )
 
+//判断数据库的执行情况
+func CheckMysqlError(err error){
+	if err != nil {
+		panic(err)
+	}
+}
+
 //连接mysql数据库
 func LinkMysql(){
 	db,err := sql.Open("mysql",DBUserName+":"+DBPassWord+"@tcp("+DBHostIP+")/"+DBName)
@@ -24,29 +31,6 @@ func LinkMysql(){
 	DeleteMysql(db)
 	db.Close()
 }
-
-//判断数据库的执行情况
-func CheckMysqlError(err error){
-	if err != nil {
-		panic(err)
-	}
-}
-
-//创建数据库 test：
-// create database test
-//创建表：
-//CREATE TABLE IF NOT EXISTS `test`.`user` (
-//`user_id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '用户编号',
-//`user_name` VARCHAR(45) NOT NULL COMMENT '用户名称',
-//`user_age` TINYINT(3) UNSIGNED NOT NULL DEFAULT 0 COMMENT '用户年龄',
-//`user_sex` TINYINT(3) UNSIGNED NOT NULL DEFAULT 0 COMMENT '用户性别',
-//PRIMARY KEY (`user_id`))
-//ENGINE = InnoDB
-//AUTO_INCREMENT = 1
-//DEFAULT CHARACTER SET = utf8
-//COLLATE = utf8_general_ci
-//COMMENT = '用户表'
-
 
 //插入数据库
 func InsertMysql(db *sql.DB){
@@ -118,3 +102,6 @@ func DeleteMysql(db *sql.DB){
 	CheckMysqlError(err)
 	fmt.Println(num)
 }
+
+
+
