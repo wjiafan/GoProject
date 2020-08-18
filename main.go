@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./pro_5"
+	"./pro_6"
 	"fmt"
 )
 
@@ -28,8 +28,13 @@ func main(){
 	//pro_4.LinkMysqlSimpleStorage()
 
 	//import "./pro_5"
-	var pwd="F:\\GoCode\\testdata"
-	pro_5.Filelist(pwd)
+	//var pwd="F:\\GoCode\\testdata"
+	//pro_5.Filelist(pwd)
+
+	//import "./pro_6"
+	pro_6.JsonParsing1()
+	//pro_6.JsonParsing2()
+	//pro_6.Readfile()
 
 	fmt.Println("END!!!")
 

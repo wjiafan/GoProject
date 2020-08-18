@@ -1,0 +1,66 @@
+【pro_6】实现json数据格式的解析和配置。
+
+<1>参考资料
+{1.1}Golang json解析的用法
+http://www.dahouduan.com/2017/09/21/golang-json-parse/
+{1.2}golang解析json格式
+https://studygolang.com/articles/6112
+{1.3}container/list
+https://syaning.github.io/go-pkgs/container/list.html#element
+{1.4}golang读取json配置文件
+https://blog.csdn.net/benben_2015/article/details/79134734
+{1.5}Go 对象序列化
+http://blog.csdn.net/benben_2015/article/details/78917374
+{1.6}json在线解析
+https://www.sojson.com/simple_json.html
+{1.7}使用io/ioutil进行读写文件
+https://www.cnblogs.com/craneboos/p/9071662.html
+{1.8}Go-json解码到结构体-踩坑
+https://www.cnblogs.com/Paul-watermelon/p/11210190.html
+{1.9}golang:json.Marshal转结构体，结构体属性为空
+https://blog.csdn.net/hsnxiaoning/article/details/78910837?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight
+{1.10}go语言解析复杂json
+https://blog.csdn.net/u010499721/article/details/42526689
+{1.11}panic: runtime error: index out of range
+https://blog.csdn.net/benben_2015/article/details/81020296
+
+<2>执行结果
+注:以下便是完整解析过程。
+BEGIN!!!
+[123 13 10 32 32 34 105 112 34 58 34 49 50 55 46 48 46 48 46 49 34 44 13 10 32 32 34 100 97 116 97 83 104 97 114 100 115 34 58 52 44 13 10 32 32 34 112 97 114 83 104 97 114 100 115 34 58 50 44 13 10 32 32 34 109 121 115 113 108 34 58 123 13 10 32 32 32 32 34 109 121 115 113 108 72 111 115 116 73 80 34 58 34 49 50 55 46 48 46 48 46 49 58 51 51 48 54 34 44 13 10 32 32 32 32 34 109 121 115 113 108 85 115 101 114 78 97 109 101 34 58 34 114 111 111 116 34 44 13 10 32 32 32 32 34 109 121 115 113 108 80 97 115 115 87 111 114 100 34 58 34 49 50 51 52 53 54 34 44 13 10 32 32 32 32 34 100 97 116 97 98 97 115 101 115 34 58 91 13 10 32 32 32 32 32 32 123 13 10 32 32 32 32 32 32 32 32 34 100 98 78 97 109 101 34 58 34 83 105 109 112 108 101 83 116 111 114 97 103 101 34 44 13 10 32 32 32 32 32 32 32 32 34 100 98 84 97 98 108 101 78 97 109 101 34 58 34 102 105 108 101 108 105 115 116 34 13 10 32 32 32 32 32 32 125 44 13 10 32 32 32 32 32 32 123 13 10 32 32 32 32 32 32 32 32 34 100 98 78 97 109 101 34 58 34 116 101 115 116 34 44 13 10 32 32 32 32 32 32 32 32 34 100 98 84 97 98 108 101 78 97 109 101 34 58 34 117 115 101 114 34 13 10 32 32 32 32 32 32 125 13 10 32 32 32 32 93 13 10 32 32 125 13 10 125 13 10]
+{
+  "ip":"127.0.0.1",
+  "dataShards":4,
+  "parShards":2,
+  "mysql":{
+    "mysqlHostIP":"127.0.0.1:3306",
+    "mysqlUserName":"root",
+    "mysqlPassWord":"123456",
+    "databases":[
+      {
+        "dbName":"SimpleStorage",
+        "dbTableName":"filelist"
+      },
+      {
+        "dbName":"test",
+        "dbTableName":"user"
+      }
+    ]
+  }
+}
+
+127.0.0.1
+4
+2
+127.0.0.1:3306
+root
+123456
+filelist
+test
+panic runtime error: index out of range [2] with length 2
+END!!!
+
+<3>未解决的问题
+{3.1}还没有和数据库交互。
+{3.2}接口封装还不完美。
+
