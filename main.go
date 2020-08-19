@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./pro_6"
+	"./pro_senior/pro3_1"
 	"fmt"
 )
 
@@ -13,29 +13,46 @@ func main(){
 
 	fmt.Println("BEGIN!!!")
 
-	//import "./pro_1"
-	//编码
-	//pro_1.SimpleEncoder()
-	//解码
-	//pro_1.SimpleDecoder()
+	//初始化链表list
+	list := pro3_1.List{}
 
-	//import "./pro_2"
+	//向链表尾部追加元素1,2,3,4,a,b,c,d
+	list.Append(1)
+	list.Append(2)
+	list.Append(3)
+	list.Append(4)
+	list.Append("a")
+	list.Append("b")
+	list.Append("c")
 
-	//import "./pro_3"
-	//pro_3.HashInit()
+	fmt.Printf("链表list的长度：%d\n",list.Length())
+	fmt.Println("链表List当前的数值为：")
+	list.ShowList()
+	fmt.Printf("\n")
 
-	//import "./pro_4"
-	//pro_4.LinkMysqlSimpleStorage()
+	//头插法
+	list.Add("beforeHead")
+	list.ShowList()
+	fmt.Printf("\n")
 
-	//import "./pro_5"
-	//var pwd="F:\\GoCode\\testdata"
-	//pro_5.Filelist(pwd)
+	list.Insert(5,"five_insert_value")
+	fmt.Print("链表List当前的数值为:")
+	list.ShowList()
+	fmt.Println()
 
-	//import "./pro_6"
-	pro_6.JsonParsing1()
-	//pro_6.JsonParsing2()
-	//pro_6.Readfile()
+	isContain := list.Contain("five_insert_value")
+	fmt.Printf("isContain[five_insert_value]:%t",isContain)
+	fmt.Println()
 
+	list.Remove("five_insert_value")
+	fmt.Print("链表List当前的数值为:")
+	list.ShowList()
+	fmt.Println()
+
+	list.RemoveAtIndex(3)
+	fmt.Print("链表List当前的数值为:")
+	list.ShowList()
+	fmt.Println()
 	fmt.Println("END!!!")
 
 }

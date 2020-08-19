@@ -3,7 +3,15 @@ go-pro说明
 <代码结构说明>
 项目源码部分的文件名: simple-
 
-初级阶段：
+<编译环境说明>
+https://shockerli.net/post/go-get-golang-org-x-solution/
+https://github.com/goproxy/goproxy.cn
+win + R ; 输入 powershell
+$env:GO111MODULE = "on"
+$env:GOPROXY = "https://goproxy.io"
+$env:GOPROXY = "https://goproxy.cn"
+
+初级阶段【primary】：
 【1】实现RS纠删码。
 【2】实现一致性哈希算法。
 【3】实现简单常用的hash方法。
@@ -14,12 +22,22 @@ go-pro说明
 【8】在【6】的前提下，使用一致性哈希算法将处理的结果存放到固定的磁盘中。
 
 
-中级阶段：
+中级阶段【intermediate】：
 【1】构建web前端页面并搭建基础框架。
 【2】实现前端页面与数据库的交互。
 【3】尝试调用minio的接口。
 
 
-高级阶段：
-【1】实现基本常用的数据结构。
-【2】
+高级阶段【senior】：
+【1】实现链表。
+【2】实现树。
+【3】实现堆。
+【4】实现栈。
+【5】实现排序算法。
+
+
+参考资料：
+{1}GO语言教程
+http://codingdict.com/article/6745
+{2}GO实例教程
+http://codingdict.com/article/23561

@@ -1,0 +1,82 @@
+【pro3_1】实现链表
+
+<1>参考资料
+{1.1}实现单链表
+https://studygolang.com/articles/13795
+{1.2}第一节 如何用Go实现单链表
+https://segmentfault.com/a/1190000011744981
+{1.3}重温一遍数据结构之单链表（golang版）
+https://studygolang.com/articles/11690
+
+<2>执行结果
+
+{2.1}基本操作
+2.1.1 判断是否为空的单链表
+2.1.2 单链表的长度
+2.1.3 从头部添加元素
+2.1.4 从尾部添加元素
+2.1.5 在指定位置添加元素
+2.1.6 删除指定元素
+2.1.7 删除指定位置的元素
+2.1.8 查看是否包含某个元素
+2.1.9 遍历所有元素
+
+{2.2}操作命令
+
+//初始化链表list
+list := pro3_1.List{}
+
+//向链表尾部追加元素1,2,3,4,a,b,c,d
+list.Append(1)
+list.Append(2)
+list.Append(3)
+list.Append(4)
+list.Append("a")
+list.Append("b")
+list.Append("c")
+
+fmt.Printf("链表list的长度：%d\n",list.Length())
+fmt.Println("链表List当前的数值为：")
+list.ShowList()
+fmt.Printf("\n")
+
+//头插法
+list.Add("beforeHead")
+list.ShowList()
+fmt.Printf("\n")
+
+list.Insert(5,"five_insert_value")
+fmt.Print("链表List当前的数值为:")
+list.ShowList()
+fmt.Println()
+
+isContain := list.Contain("five_insert_value")
+fmt.Printf("isContain[five_insert_value]:%t",isContain)
+fmt.Println()
+
+list.Remove("five_insert_value")
+fmt.Print("链表List当前的数值为:")
+list.ShowList()
+fmt.Println()
+
+list.RemoveAtIndex(3)
+fmt.Print("链表List当前的数值为:")
+list.ShowList()
+fmt.Println()
+fmt.Println("END!!!")
+
+{2.3}操作结果
+
+BEGIN!!!
+链表list的长度：7
+链表List当前的数值为：
+	1	2	3	4	a	b	c
+	beforeHead	1	2	3	4	a	b	c
+链表List当前的数值为:	beforeHead	1	2	3	4	five_insert_value	a	b	c
+isContain[five_insert_value]:true
+链表List当前的数值为:	beforeHead	1	2	3	4	a	b	c
+链表List当前的数值为:	beforeHead	1	2	4	a	b	c
+END!!!
+
+<3>未解决的问题
+
