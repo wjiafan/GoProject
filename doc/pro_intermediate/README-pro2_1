@@ -1,6 +1,22 @@
 【pro2_1】构建web前端页面并搭建基础框架
 <1>参考资料
+{1.1}从0开始Go语言，用Golang搭建网站
+https://segmentfault.com/a/1190000019151901
+{1.2}Go Web 编程
+https://learnku.com/docs/build-web-application-with-golang
+
 
 <2>执行结果
+
+{2.1}
+http.HandleFunc("/", pro2_1.SayHellName)       	//设置访问的路由
+http.HandleFunc("/login", pro2_1.Login)         //设置访问的路由
+err := http.ListenAndServe(":9000", nil) 	//设置监听的端口
+if err != nil {
+    log.Fatal("ListenAndServe: ", err)
+}
+
+{2.2}
+
 
 <3>未解决的问题
